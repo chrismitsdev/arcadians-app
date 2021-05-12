@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equivb="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link 
+		rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" 
+		integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" 
+		crossorigin="anonymous">
+	<link rel="stylesheet" href="output.css">
+	<title>Panarcadians Tailwind CSS</title>
+</head>
+<body>
+	
+	<!--#### HEADER SECTION ####-->
+	<header
+		class="lg:h-750 py-25 lg:p-0 bg-no-repeat bg-cover bg-bottom" 
+		style="background-image: url('./img/showcase.png');">
+		<div id="topbar" class="container relative lg:w-1360 lg:h-70 lg:justify-between lg:items-end mx-auto flex justify-center items-center">
+			
+			<!-- HAM ICON -->
+			<div class="lg:hidden cursor-pointer group w-24 h-24 absolute -top-5 right-10 flex flex-col justify-around items-center" onclick="openSlideMenu()">
+				<div class="w-22 h-2 bg-white group-hover:bg-secondary transition-all duration-500"></div>
+				<div class="w-22 h-2 bg-white group-hover:bg-secondary transition-all duration-500"></div>
+				<div class="w-22 h-2 bg-white group-hover:bg-secondary transition-all duration-500"></div>
+			</div>
+			
+			<!-- SLIDE MENU -->
+			<div id="slide-menu" class="fixed h-full w-0 z-50 top-0 right-0 bg-white overflow-x-hidden transition-all flex flex-col justify-start items-start shadow-basic">
+				<div class="h-45 w-full bg-light flex justify-between items-center">
+					<a href="#" class="ml-20" onclick="closeSlideMenu()">
+						<img src="./img/close.svg" alt="Close Button" />
+					</a>
+					<a href="#" class="mr-20">
+						<img src="./img/flag2.svg" alt="Language" />
+					</a>
+				</div>
+				
+				<div class="h-45 w-full flex justify-center items-center border-b border-gray2">
+					<a href="#">
+						<img src="./img/user2.svg" alt="User" />
+					</a>
+					<h5 class="text-14 font-bold text-primary cursor-pointer">Εγγραφή / Σύνδεση</h5>
+				</div>
+				
+				<div class="h-45 w-full px-30 flex justify-between items-center">
+					<a class="text-primary text-14 hover:text-secondary" href="#" onclick="openSubSlideMenu()">
+						Η ΟΜΟΣΠΟΝΔΙΑ
+					</a>
+					<i class="fas fa-chevron-right"></i>
+				</div>
+				
+				<div class="h-45 w-full px-30 flex justify-between items-center">
+					<a class="text-primary text-14 hover:text-secondary" href="#">
+						ΑΡΚΑΔΩΝ ΕΡΓΑ
+					</a>
+					<i class="fas fa-chevron-right"></i>
+				</div>
+				
+				<div class="h-45 w-full px-30 flex justify-between items-center">
+					<a class="text-primary text-14 hover:text-secondary" href="#">
+						ΕΠΩΝΥΜΟΙ ΑΡΚΑΔΕΣ
+					</a>
+					<i class="fas fa-chevron-right"></i>
+				</div>
+				
+				<div class="h-45 w-full px-30 flex justify-between items-center">
+					<a class="text-primary text-14 hover:text-secondary" href="#">
+						ΝΕΑ - ΕΝΗΜΕΡΩΣΗ
+					</a>
+					<i class="fas fa-chevron-right"></i>
+				</div>
+				
+				<div class="h-45 w-full px-30 flex justify-between items-center">
+					<a class="text-primary text-14 hover:text-secondary" href="#">
+						ΕΠΙΣΚΕΨΗ ΣΤΗΝ ΑΡΚΑΔΙΑ
+					</a>
+					<i class="fas fa-chevron-right"></i>
+				</div>
+				
+				<div class="h-45 w-full px-30 flex justify-between items-center">
+					<a class="text-primary text-14 hover:text-secondary" href="#">
+						ΑΝΑΖΗΤΗΣΕΙΣ ΣΤΗΝ ΑΡΚΑΔΙΑ
+					</a>
+					<i class="fas fa-chevron-right"></i>
+				</div>
+				
+				<div class="h-45 w-full px-30 flex justify-between items-center">
+					<a class="text-primary text-14 hover:text-secondary" href="#">
+						ΕΠΙΚΟΙΝΩΝΙΑ
+					</a>
+					<i class="fas fa-chevron-right"></i>
+				</div>
+			</div>
+			
+			<div id="left-side" class="lg:w-auto lg:ml-245 lg:-mb-10 lg:justify-start lg:items-stretch w-full flex justify-evenly items-center">
+				<div id="location" class="lg:mr-30">
+					<h5 class="text-12 text-right tracking-basic text-white font-bold">ΑΡΚΑΔΙΑ</h5>
+					<a class="text-26 font-display text-white flex justify-between items-center" href="#">
+						<img class="inline-block -mt-3 mr-5" src="./img/clock.svg" alt="Clock"/>
+						13:28
+					</a>
+				</div>
+				
+				<a class="lg:hidden" href="#">
+					<img class="inline-block md:hidden" src="./img/logo-mobile.svg" alt="Main Logo" />
+					<img class="hidden md:inline-block" src="./img/logo.svg" alt="Main Logo" />
+				</a>
+				
+				<img class="md:hidden absolute -bottom-40 left-2/4 transform -translate-x-1/2" src="./img/paf-mobile.svg" alt="Paf Logo" />
+				
+				<div id="weather">
+					<h5 class="text-12 text-right tracking-basic text-white font-bold">ΚΑΤΑΙΓΙΔΑ</h5>
+					<a class="text-26 font-display text-white flex justify-between items-center" href="#">
+						<img class="inline-block -mt-3 mr-5" src="./img/weather.svg" alt="Weather"/>
+						12&#730;C<span class="opacity-40">&#730;F</span>
+					</a>
+				</div>
+			</div>
+			
+			<div id="right-side" class="mr-15 hidden lg:flex">
+				<div id="login">
+					<a class="text-14 tracking-basic text-white font-bold flex justify-between items-center" href="#">
+						<img class="inline-block mr-5" src="./img/user.svg" alt="User"/>
+							Εγγραφή / Σύνδεση
+					</a>
+				</div>
+				
+				<div id="flag" class="ml-30">
+					<a href="#">
+						<img class="inline-block mr-5" src="./img/flag.svg" alt="Language"/>
+					</a>
+				</div>
+			</div>
+			
+		</div>
+		
+		<nav class="container lg:flex mt-12 bg-white text-primary rounded w-1360 h-60 mx-auto hidden justify-end items-center relative">
+			
+			<a class="absolute left-50 border-10 rounded-full border-secondary" href="#">
+				<img class="inline-block" src="./img/logo.svg" alt="Main Logo" />
+			</a>
+			
+			<img class="absolute -bottom-40 left-245" src="./img/paf.svg" alt="Paf Logo" />
+			
+			<ul class="2xl:w-1110 xl:w-1024 lg:w-770 xl:text-14 lg:text-12 text-primary font-bold flex justify-evenly items-center">
+				<li class="relative group">
+					<a class="hover:text-secondary group-hover:pb-40" href="#">Η ΟΜΟΣΠΟΝΔΙΑ</a>
+					<ul class="scale-0 w-275 h-370 text-14 text-primary font-bold pl-15 transform group-hover:scale-100 group-hover:flex transition-all duration-500 flex-col justify-evenly bg-light rounded absolute top-50 left-0">
+						<li>
+							<a class="hover:text-secondary" href="#">Ιστορία</a>
+						</li>
+						<li>
+							<a class="hover:text-secondary" href="#">Διοικητικό Συμβούλιο</a>
+						</li>
+						<li>
+							<a class="hover:text-secondary" href="#">Πρόεδρος - Βιογραφικό Σημείωμα</a>
+						</li>
+						<li>
+							<a class="hover:text-secondary" href="#">Μήνυμα Προέδρου</a>
+						</li>
+						<li>
+							<a class="hover:text-secondary" href="#">Districts</a>
+						</li>
+						<li>
+							<a class="hover:text-secondary" href="#">Διατελεσαντες Προέδροι</a>
+						</li>
+						<li>
+							<a class="hover:text-secondary" href="#">Αποστολή - Αξίες</a>
+						</li>
+						<li>
+							<a class="hover:text-secondary" href="#">Πορεία - Εξέλιξη</a>
+						</li>
+						<li>
+							<a class="hover:text-secondary" href="#">Ο Έλληνας πρέσβης στην Ουάσιγκτον</a>
+						</li>
+						<li>
+							<a class="hover:text-secondary" href="#">Ο Πρέσβης ΗΠΑ στην Αθήνα</a>
+						</li>
+						<li>
+							<a class="hover:text-secondary" href="#">Ο Οικουμενικός Πατριάρχης</a>
+						</li>
+						<li>
+							<a class="hover:text-secondary" href="#">Ο Αρχιεπίσκοπος Αμερικής</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a class="hover:text-secondary" href="#">ΑΡΚΑΔΩΝ ΕΡΓΑ</a>
+				</li>
+				<li>
+					<a class="hover:text-secondary" href="#">ΕΠΩΝΥΜΟΙ ΑΡΚΑΔΕΣ</a>
+				</li>
+				<li>
+					<a class="hover:text-secondary" href="#">ΝΕΑ - ΕΝΗΜΕΡΩΣΗ</a>
+				</li>
+				<li>
+					<a class="hover:text-secondary" href="#">ΕΠΙΣΚΕΨΗ ΣΤΗΝ ΑΡΚΑΔΙΑ</a>
+				</li>
+				<li>
+					<a class="hover:text-secondary" href="#">ΑΝΑΖΗΤΗΣΕΙΣ ΣΤΗΝ ΑΡΚΑΔΙΑ</a>
+				</li>
+				<li>
+					<div>
+						<a href="#">
+							<i class="far fa-envelope text-24 text-primary hover:text-secondary"></i>
+						</a>
+					</div>
+				</li>
+			</ul>
+			
+		</nav>
+		
+		<div 
+			class="lg:w-450 lg:h-450 w-280 h-280 lg:p-40 pt-10 pb-20 px-20 lg:mt-70 mt-70 mx-auto text-center bg-no-repeat bg-cover bg-center flex flex-col justify-around lg:justify-center items-center border-6 rounded-full border-white shadow-basic" 
+			style="background-image: url('./img/circle.png');">
+			<img class="hidden lg:inline-block" src="./img/generic.svg" alt="Generic Logo" />
+			<img class="inline-block lg:hidden" src="./img/generic-mobile.svg" alt="Generic Logo" />
+			<h3 class="text-12 lg:mt-20 tracking-basic font-bold text-white">ΚΑΛΩΣ ΗΡΘΑΤΕ</h3>
+			<h2 class="lg:text-24 text-18 lg:tracking-basic font-bold text-white">Η αποστολή μας</h2>
+			<p class="hidden lg:block text-16 my-10 tracking-basic leading-relaxed text-white">
+				Ο Παναρκαδικής Ομοσπονδίας Αμερικής είναι μια πανεθνική μη κερδοσκοπικού αδελφό ελληνικό-αμερικανική οργάνωση τα μέλη της οποίας κατεβαίνουν από την περιοχή της Αρκαδίας στην Πελοπόννησο, στη νότια Ελλάδα …
+			</p>
+			<p class="block lg:hidden text-14 leading-tight text-white">
+				Ο Παναρκαδικής Ομοσπονδίας Αμερικής είναι μια πανεθνική μη κερδοσκοπικού αδελφό ελληνικό-αμερικανική οργάνωση …
+			</p>
+			<a class="lg:text-14 text-12 lg:w-200 lg:h-50 lg:rounded lg:tracking-basic lg:leading-loose w-130 h-30 border border-white rounded-sm flex justify-center items-center text-white relative hover:bg-white hover:text-dark transition-all duration-500" href="#">
+				ΠΕΡΙΣΣΟΤΕΡΑ <i class="absolute lg:top-17 lg:right-20 top-8 right-10 fas fa-chevron-right"></i>
+			</a>
+		</div>
+		
+	</header>
+	
+	<!--#### WE COUNT SECTION ####-->
+	<section 
+		class="lg:h-750 py-50 bg-no-repeat bg-center bg-contain"
+		style="background-color: #f8f8f8; background-image: url('./img/bg-tree2.png');">
+		
+		<div class="container mx-auto flex flex-col justify-center items-center">
+			
+			<div id="HEADER" class="text-center">
+				<img class="lg:inline-block hidden mx-auto" src="./img/tree.svg" alt="Tree" />
+				<img class="inline-block lg:hidden mx-auto" src="./img/tree-mobile.svg" alt="Tree" />
+				<h2 class="lg:mt-20 lg:mb-0 lg:text-48 lg:tracking-basic my-10 leading-none text-34 text-secondary font-bold">
+					Μετριόμαστε, γιατί μετράμε!
+				</h2>
+			</div>
+			
+			<div id="MAIN" class="lg:my-30 my-10 flex">
+				
+				<div id="LEFT" class="lg:w-470 w-300 lg:mr-20 lg:text-left text-center">
+					<h2 class="lg:tracking-basic lg:mb-20 text-18 text-primary font-bold">
+						Γενική απογραφή  των αποδήμων Αρκάδων στις ΗΠΑ και επαναπατρισθέντων από τις ΗΠΑ
+					</h2>
+					<p class="text-16 text-dark leading-relaxed">
+						Η Παναρκαδική Ομοσπονδία Αμερικής πραγματοποιεί απογραφή των Αρκάδων που διαμένουν και εργάζονται στις ΗΠΑ, (ανεξαρτήτως υπηκότητας). 
+					</p>
+					<p class="my-10 text-16 text-dark leading-relaxed font-bold">
+						Το αποτύπωμα της Αρκαδικής γης μας συνδέει!
+					</p>
+					<p class="text-16 text-dark leading-relaxed">
+						Όση χιλιομετρική απόσταση και αν μας χωρίζει, όσες γενιές και να έχουμε...ψηλώσει πέρα απο τις ρίζες μας, η Αρκαδία, μας ενώνει!
+					</p>
+				</div>
+				
+				<div id="RIGHT" class="w-470 ml-20 hidden lg:block">
+					<h2 class="mb-45 text-18 text-primary font-bold tracking-basic">
+						Απογραφόμαστε...
+					</h2>
+					<p class="mb-5 text-16 text-dark leading-relaxed">
+						<i class="fas fa-chevron-right text-primary"></i> Για να γνωρίσουμε ο ένας τον άλλο.
+					</p>
+					<p class="mb-5 text-16 text-dark leading-relaxed">
+						<i class="fas fa-chevron-right text-primary"></i> Για να αντλήσουμε δύναμη απο  τις ρίζες μας και την καταγωγή μας.
+					</p>
+					<p class="mb-5 text-16 text-dark leading-relaxed">
+						<i class="fas fa-chevron-right text-primary"></i> Για να είμαστε χρήσιμοι και να  παρεμβαίνουμε δημιουργικά για τις ΗΠΑ την Ελλάδα και την Αρκαδία.
+					</p>
+					<p class="mb-5 text-16 text-dark leading-relaxed">
+						<i class="fas fa-chevron-right text-primary"></i> Για να υλοποιήσουμε τα σχέδια και τα οραματά μας.
+					</p>
+					<p class="text-16 text-dark leading-relaxed">
+						<i class="fas fa-chevron-right text-primary"></i> Για να είμαστε ισχυροί.
+					</p>
+				</div>
+			
+			</div>
+			
+			<div id="FOOTER" class="text-center">
+				<h4 class="text-18 text-secondary font-bold">
+					ΤΕΛΕΤΗ ΕΝΑΡΞΗΣ
+				</h4>
+				<h1 class="lg:text-34 text-24 text-primary font-bold">
+					Παρασκευή 20 Απριλίου 2108
+				</h1>
+				<h4 class="text-18 text-primary font-bold">
+					ΝΕΑ ΥΟΡΚΗ
+				</h4>
+			</div>
+			
+		</div>
+		
+	</section>
+	
+	<!--#### WORK SECTION ####-->
+	<section class="2xl:h-750 w-full h-full bg-primary py-50">
+		
+		<div class="container 2xl:h-650 w-full h-full mx-auto flex flex-col justify-between items-center">
+			
+			<div id="HEADER" class="text-center">
+				<img class="mx-auto" src="./img/generic.svg" alt="Generic Logo" />
+				<h2 class="mt-10 text-12 text-white font-bold tracking-basic">
+					ΕΡΓΑ & ΔΡΑΣΤΗΡΙΟΤΗΤΕΣ
+				</h2>
+			</div>
+			
+			<div id="MAIN" class="2xl:w-1360 2xl:my-0 xl:w-1280 sm:justify-between my-50 flex flex-wrap justify-center items-center">
+				
+				<div class="lg:w-300 xl:mb-0 mb-30 w-275 rounded-lg hover:p-10 hover:shadow-basic transition-all duration-300 cursor-default">
+					<img class="rounded-t" src="./img/photo1.jpg" alt="Photo 1" />
+					<h4 class="mt-5 md:text-24 text-18 text-white font-bold tracking-basic">
+						Γενικού Παναρκαδικό Νοσοκομείο Τρίπολης
+					</h4>
+					<p class="my-10 text-16 text-white font-normal tracking-basic">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolor.
+					</p>
+					<a class="text-14 text-white font-bold flex justify-start items-center hover:tracking-basic transition-all duration-500" href="#">
+						<div class="mr-5 w-18 h-2 bg-secondary"></div>ΠΕΡΙΣΣΟΤΕΡΑ
+					</a>
+				</div>
+				
+				<div class="lg:w-300 xl:mb-0 mb-30 w-275 rounded-lg hover:p-10 hover:shadow-basic transition-all duration-300 cursor-default">
+					<img class="rounded-t" src="./img/photo2.jpg" alt="Photo 2" />
+					<h4 class="mt-5 md:text-24 text-18 text-white font-bold tracking-basic">
+						Ο παραδοσιακός οικισμός Λεωνιδίου
+					</h4>
+					<p class="my-10 text-16 text-white font-normal tracking-basic">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolor.
+					</p>
+					<a class="text-14 text-white font-bold flex justify-start items-center hover:tracking-basic transition-all duration-500" href="#">
+						<div class="mr-5 w-18 h-2 bg-secondary"></div>ΠΕΡΙΣΣΟΤΕΡΑ
+					</a>
+				</div>
+				
+				<div class="lg:w-300 xl:mb-0 mb-30 w-275 rounded-lg hover:p-10 hover:shadow-basic transition-all duration-300 cursor-default">
+					<img class="rounded-t" src="./img/photo3.jpg" alt="Photo 3" />
+					<h4 class="mt-5 md:text-24 text-18 text-white font-bold tracking-basic">
+						Κυνουρία, Εκεί που δεσπόζει ο Πάρνωνας
+					</h4>
+					<p class="my-10 text-16 text-white font-normal tracking-basic">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolor.
+					</p>
+					<a class="text-14 text-white font-bold flex justify-start items-center hover:tracking-basic transition-all duration-500" href="#">
+						<div class="mr-5 w-18 h-2 bg-secondary"></div>ΠΕΡΙΣΣΟΤΕΡΑ
+					</a>
+				</div>
+				
+				<div class="lg:w-300 xl:mb-0 mb-30 w-275 rounded-lg hover:p-10 hover:shadow-basic transition-all duration-300 cursor-default">
+					<img class="rounded-t" src="./img/photo4.jpg" alt="Photo 4" />
+					<h4 class="mt-5 md:text-24 text-18 text-white font-bold tracking-basic">
+						Eλληνικές πόλεις με τα καλύτερα πάρκα!
+					</h4>
+					<p class="my-10 text-16 text-white font-normal tracking-basic">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolor.
+					</p>
+					<a class="text-14 text-white font-bold flex justify-start items-center hover:tracking-basic transition-all duration-500" href="#">
+						<div class="mr-5 w-18 h-2 bg-secondary"></div>ΠΕΡΙΣΣΟΤΕΡΑ
+					</a>
+				</div>
+			
+			</div>
+			
+			<div id="FOOTER" class="text-center">
+				<a class="text-14 w-200 h-50 border border-white rounded flex justify-center items-center tracking-basic leading-loose text-white relative hover:bg-white hover:text-dark transition-all duration-500" href="#">
+					ΠΕΡΙΣΣΟΤΕΡΑ <i class="absolute top-17 right-20 fas fa-chevron-right"></i>
+				</a>
+			</div>
+		
+		</div>
+		
+	</section>
+	
+	<!--#### CONTACT SECTION ####-->
+	<section class="sm:h-750 bg-white py-50">
+		
+		<div class="container sm:w-750 sm:h-650 mx-auto flex flex-col justify-between items-center">
+			
+			<div id="HEADER" class="text-center">
+				<h2 class="lg:text-12 text-14 text-primary font-bold tracking-basic">
+					ΕΠΙΚΟΙΝΩΝΙΑ
+				</h2>
+			</div>
+			
+			<div class="w-full h-1 bg-gray"></div>
+			
+			<div id="MAIN" class="sm:w-600 w-10/12 sm:my-0 my-40">
+				<form>
+					<label class="text-12 font-normal text-dark tracking-basic block mb-5" for="name">Ονοματεπώνυμο</label>
+					<div class="relative md:mb-20 mb-10">
+						<input class="block w-full border border-gray rounded sm:h-50 h-46 pl-40 text-18 focus:border-primary focus:outline-none" type="text" name="name">
+						<i class="fas fa-user absolute text-darkgray text-24 top-11 left-10"></i>
+					</div>
+					
+					<label class="text-12 font-normal text-dark tracking-basic block mb-5" for="phone">Τηλέφωνο</label>
+					<div class="relative md:mb-20 mb-10">
+						<input class="block w-full border border-gray rounded sm:h-50 h-46 pl-40 text-18 focus:border-primary focus:outline-none" type="text" name="phone">
+						<i class="fas fa-phone-alt absolute text-darkgray text-24 top-11 left-10"></i>
+					</div>
+			
+					<label class="text-12 font-normal text-dark tracking-basic block mb-5" for="country">Email</label>
+					<div class="relative md:mb-20 mb-10">
+						<input class="block w-full border border-gray rounded sm:h-50 h-46 pl-40 text-18 focus:border-primary focus:outline-none" type="text" name="email">
+						<i class="fas fa-at absolute text-darkgray text-24 top-11 left-10"></i>
+					</div>
+			
+					<label class="text-12 font-normal text-dark tracking-basic block mb-5" for="subject">Μήνυμα</label>
+					<textarea class="block w-full border border-gray rounded h-120 pt-5 pl-10 text-18 resize-none focus:border-primary focus:outline-none" name="subject"></textarea>
+				</form>
+				
+			</div>
+			
+			<div class="w-full h-1 bg-gray"></div>
+			
+			<div id="FOOTER" class="self-end text-center md:mr-75 mr-30 sm:mt-0 mt-20">
+				<a class="text-14 md:w-200 md:h-50 w-130 h-50 bg-secondary rounded flex justify-center items-center tracking-basic text-white relative hover:bg-primary transition-all duration-500" href="#">
+					ΑΠΟΣΤΟΛΗ <i class="absolute md:top-17 md:right-20 top-19 right-10 fas fa-chevron-right"></i>
+				</a>
+			</div>
+			
+		</div>
+	
+	</section>
+	
+		<!--#### FOOTER SECTION ####-->
+	<footer class="lg:h-450 w-full h-full bg-primary py-50 relative">
+		
+		<div class="hidden w-45 h-45 bg-secondary rounded-full text-white hover:scale-110 transform transition-all duration-500 cursor-pointer text-18 lg:flex justify-center items-center absolute -top-20 right-100" onclick="backToTop()">
+			<img src="./img/chevron-up.svg" alt="Chevron Up" />
+		</div>
+		
+		<div class="lg:hidden w-45 h-45 bg-secondary rounded-full text-white hover:scale-110 transform transition-all duration-500 cursor-pointer text-18 flex justify-center items-center absolute bottom-90 right-20" onclick="backToTop()">
+			<img src="./img/chevron-up.svg" alt="Chevron Up" />
+		</div>
+		
+		<div class="container lg:w-750 lg:h-400 w-full h-full mx-auto flex flex-col justify-evenly items-center">
+			
+			<div class="flex flex-col justify-center items-center">
+					<img class="mb-20" src="./img/logo.svg" alt="Logo" />
+					<img src="./img/paf.svg" alt="PAF" />
+			</div>
+			
+			<div class="sm:w-300 lg:mt-0 mt-30 w-280 flex justify-between items-center">
+				<a href="#">
+					<img src="./img/fb.svg" alt="Facebook" />
+				</a>
+				<a href="#">
+					<img src="./img/tw.svg" alt="Twitter" />
+				</a>
+				<a href="#">
+					<img src="./img/in.svg" alt="LikedIn" />
+				</a>
+				<a href="#">
+					<img src="./img/ig.svg" alt="Instagram" />
+				</a>
+				<a href="#">
+					<img src="./img/yt.svg" alt="YouTube" />
+				</a>
+			</div>
+			
+			<div class="lg:w-1078 lg:my-0 lg:h-auto my-30 h-245 flex flex-col lg:flex-row justify-between items-center">
+				<a class="text-14 text-white font-bold hover:text-secondary" href="#">
+					Η ΟΜΟΣΠΟΝΔΙΑ
+				</a>
+				<a class="text-14 text-white font-bold hover:text-secondary" href="#">
+					ΑΡΚΑΔΩΝ ΕΡΓΑ
+				</a>
+				<a class="text-14 text-white font-bold hover:text-secondary" href="#">
+					ΕΠΩΝΥΜΟΙ ΑΡΚΑΔΕΣ
+				</a>
+				<a class="text-14 text-white font-bold hover:text-secondary" href="#">
+					ΝΕΑ - ΕΝΗΜΕΡΩΣΗ
+				</a>
+				<a class="text-14 text-white font-bold hover:text-secondary" href="#">
+					ΕΠΙΣΚΕΨΗ ΣΤΗΝ ΑΡΚΑΔΙΑ
+				</a>
+				<a class="text-14 text-white font-bold hover:text-secondary" href="#">
+					ΑΝΑΖΗΤΗΣΕΙΣ ΣΤΗΝ ΑΡΚΑΔΙΑ
+				</a>
+				<a class="text-14 text-white font-bold hover:text-secondary" href="#">
+					ΕΠΙΚΟΙΝΩΝΙΑ
+				</a>
+			</div>
+			
+			<p class="text-grayblue">
+				&copy;2018 Pan Arcadian Federation of America
+			</p>
+			
+		</div>
+
+	</footer>
+	
+	<script>
+		// BACK TO TOP FUNCTIONALITY
+		function backToTop() {
+			document.documentElement.scrollTo({
+				top: 0,
+				behavior: 'smooth'
+			})
+		}
+		
+		function openSlideMenu() {
+      document.getElementById('slide-menu').style.width = '90vw';
+    }
+		
+    function closeSlideMenu() {
+      document.getElementById('slide-menu').style.width = '0vw';
+    }
+		
+	</script>
+	
+</body>
+</html>
